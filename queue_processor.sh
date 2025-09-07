@@ -12,6 +12,8 @@ mkdir -p $QUEUE_DIR $RUNNING_DIR $DONE_DIR
 echo "Queue processor started"
 echo "Cases directory: $CASES_DIR"
 
+source /usr/lib/openfoam/openfoam2312/etc/bashrc            # percorso di openfoam da seguire
+
 while true; do
     # Controlla se c'è già una simulazione in corso
     if [ "$(ls $RUNNING_DIR/*.job 2>/dev/null | wc -l)" -gt 0 ]; then
@@ -64,6 +66,7 @@ while true; do
     echo "==================="
     
     cd "$case_path"
+    chmod +x "$command"
     ./$command &
     job_pid=$!
     
