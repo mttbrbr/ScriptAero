@@ -15,13 +15,16 @@ Priorità (numero intero, più basso = maggiore priorità)
 Nome della cartella del case (solo nome, senza path)
 Comando da eseguire (es: Allrun)
 Descrizione (testo libero)
+
 Esempio di file queue/example.job:
 
+1case
+1Allrun
+Simulazione di test
 
-1case1AllrunSimulazione di test
+
 Avvio dello script
 Esegui lo script dalla cartella principale:
-
 
 ./queue_processor.sh
 Lo script controllerà periodicamente la coda e avvierà i job uno alla volta, spostandoli tra le cartelle in base allo stato.
