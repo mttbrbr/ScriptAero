@@ -19,6 +19,14 @@ while true; do
     echo -e "${CYAN}║                   $(date '+%Y-%m-%d %H:%M:%S')                   ║${NC}"
     echo -e "${CYAN}╚══════════════════════════════════════════════════════════════╝${NC}"
     echo ""
+
+    # INFO SISTEMA
+    cpu_usage=$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}')
+    ram_usage=$(free -m | awk '/Mem:/ { printf("%d/%d MB (%.1f%%)", $3, $2, $3/$2*100) }')
+    disk_free=$(df -h / | awk 'NR==2 {print $4 " liberi su " $2}')
+
+    echo -e "${YELLOW}🖥️  CPU: ${NC}$cpu_usage%   ${YELLOW}RAM: ${NC}$ram_usage   ${YELLOW}DISK: ${NC}$disk_free"
+    echo ""
     
     # RUNNING
     echo -e "${GREEN}▶ RUNNING:${NC}"
