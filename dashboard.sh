@@ -16,7 +16,7 @@ while true; do
     
     echo -e "${CYAN}╔══════════════════════════════════════════════════════════════╗${NC}"
     echo -e "${CYAN}║                    🚀 CFD QUEUE DASHBOARD                    ║${NC}"
-    echo -e "${CYAN}║                   $(date '+%Y-%m-%d %H:%M:%S')                   ║${NC}"
+    echo -e "${CYAN}║                   $(date '+%Y-%m-%d %H:%M:%S')                        ║${NC}"
     echo -e "${CYAN}╚══════════════════════════════════════════════════════════════╝${NC}"
     echo ""
 
